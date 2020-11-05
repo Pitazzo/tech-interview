@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm/dist/common/typeorm.decorators';
-import { Car } from 'src/misc/entities/car.entity';
-import { RideEntity } from 'src/misc/entities/ride';
+import { Car } from 'src/persistence/entities/car.entity';
+import { RideEntity } from 'src/persistence/entities/ride';
 import { Repository, Equal, FindManyOptions } from 'typeorm';
 
 @Injectable()

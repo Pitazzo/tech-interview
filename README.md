@@ -1,5 +1,5 @@
 ## Introducción
-Este repositorio contiene una app de ejemplo para la realización de entrevistas técnicas. La app está implementada haciendo uso del framework NestJS y actúa como backend de un caso de uso muy simplificado que se detalla a continuación.
+La app está implementada haciendo uso del framework NestJS y actúa como backend de un caso de uso muy simplificado que se detalla a continuación.
 El proyecto contiene múltiples errores de diseño y estilo, además de no respetar criterios de buenas prácticas de desarrollo, principios SOLID, estándares, etc. El objetivo de la prueba es localizarlos y, en su caso, comentar una solución.
 
 ## Puesta en marcha

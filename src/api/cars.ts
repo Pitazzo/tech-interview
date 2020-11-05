@@ -8,8 +8,8 @@ import {
   Put,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm/dist/common';
-import { NewCarDto, UpdateCarDto } from 'src/misc/dtos/car';
-import { Car } from 'src/misc/entities/car.entity';
+import { NewCarDto, UpdateCarDto } from 'src/persistence/dtos/car';
+import { Car } from 'src/persistence/entities/car.entity';
 import { Repository } from 'typeorm';
 
 @Controller('cars')

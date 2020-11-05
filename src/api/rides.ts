@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { RidesService } from 'src/services/rides.service';
+import { RidesService } from 'src/business/rides.service';
 
 @Controller('rides')
 export class RidesController {

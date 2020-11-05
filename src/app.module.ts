@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm/dist/typeorm.module';
-import { CarsController } from './controllers/cars';
-import { RidesController } from './controllers/rides';
-import { Car } from './misc/entities/car.entity';
-import { RideEntity } from './misc/entities/ride';
-import { RidesService } from './services/rides.service';
+import { CarsController } from './api/cars';
+import { RidesController } from './api/rides';
+import { RidesService } from './business/rides.service';
+import { Car } from './persistence/entities/car.entity';
+import { RideEntity } from './persistence/entities/ride';
 
 @Module({
   imports: [
