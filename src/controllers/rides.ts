@@ -7,41 +7,37 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { RidesService } from 'src/services/rides/rides.service';
+import { RidesService } from 'src/services/rides.service';
 
 @Controller('rides')
 export class RidesController {
   constructor(private ridesService: RidesService) {}
 
-  async _comprobarToken(token: string) {
-    // Suponemos lógica de comprobación de token
-    await new Promise(resolve => setTimeout(resolve, 100));
-    if (false) {
-      throw Error('La autenticación ha fallado');
-    }
-  }
-
   @Get(':/id')
   async get(@Param('id') id: string) {
-    await this._comprobarToken('...');
-    return this.ridesService.obtenerRide(id);
+    return this.ridesService.obtenerRide('TOKEN', id);
   }
 
   @Post()
   async post(@Body() body: { id: string; inicio: string; final: string }) {
-    await this._comprobarToken('...');
-    return this.ridesService.crearRide(body.id, body.inicio, body.final);
+    if (body.inicio === body.final) {
+      throw new Error('Las direcciones de inicio y final deben ser diferentes');
+    }
+    return this.ridesService.crearRide(
+      'TOKEN',
+      body.id,
+      body.inicio,
+      body.final,
+    );
   }
 
   @Put(':/id')
   async put() {
-    await this._comprobarToken('...');
-    return this.ridesService.actualizarRide();
+    return this.ridesService.actualizarRide('TOKEN');
   }
 
   @Delete(':/id')
   async delete() {
-    await this._comprobarToken('...');
-    return this.ridesService.eliminarRide();
+    return this.ridesService.eliminarRide('TOKEN');
   }
 }

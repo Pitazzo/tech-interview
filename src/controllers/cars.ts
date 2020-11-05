@@ -19,13 +19,13 @@ export class CarsController {
     private carsRepository: Repository<Car>,
   ) {}
 
-  @Get(':/id')
-  async get(@Param() id: number) {
+  @Post(':/id/getCar')
+  async find(@Param() id: number) {
     return this.carsRepository.findOneOrFail(id);
   }
 
-  @Post()
-  async post(@Body() newDto: NewCarDto) {
+  @Post(':/id/registerCar')
+  async register(@Body() newDto: NewCarDto) {
     return this.carsRepository.insert({
       model: newDto.model,
       plate: newDto.plate,
@@ -34,15 +34,15 @@ export class CarsController {
     });
   }
 
-  @Put(':/id')
-  async put(@Param() id: number, @Body() updateDto: UpdateCarDto) {
+  @Post(':/id/updateCar')
+  async update(@Param() id: number, @Body() updateDto: UpdateCarDto) {
     return this.carsRepository.update(
       { id: id },
       { remarks: updateDto.remarks },
     );
   }
 
-  @Delete(':/id')
+  @Post(':/id/deleteCar')
   async delete(@Param() id: number) {
     return this.carsRepository.delete({ id: id });
   }

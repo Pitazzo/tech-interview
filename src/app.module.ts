@@ -4,7 +4,7 @@ import { CarsController } from './controllers/cars';
 import { RidesController } from './controllers/rides';
 import { Car } from './misc/entities/car.entity';
 import { RideEntity } from './misc/entities/ride';
-import { RidesService } from './services/rides/rides.service';
+import { RidesService } from './services/rides.service';
 
 @Module({
   imports: [
